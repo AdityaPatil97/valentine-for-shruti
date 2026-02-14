@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Floating Hearts Background */
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hearts::before {
+    content: "💖 💕 💗 💘 ❤️ 💞";
+    position: absolute;
+    width: 100%;
+    font-size: 2rem;
+    animation: floatHearts 15s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); }
+}
+
+/* Main Container */
+.container {
+    z-index: 2;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Heading */
+.main-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Question */
+.question {
+    font-size: 2rem;
+    margin: 20px 0 40px;
+    color: white;
+}
+
+/* Buttons */
+.buttons {
+    position: relative;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+#yes-btn {
+    background: #ff4d88;
+    color: white;
+}
+
+#yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 77, 136, 0.6);
+}
+
+#no-btn {
+    background: white;
+    color: #ff4d88;
+    position: relative;
+}
+
+/* Final Message */
+.final-message {
+    display: none;
+    margin-top: 40px;
+    color: white;
+    animation: fadeIn 1s ease forwards;
+}
+
+.final-message h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.final-message p {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Confetti Canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .main-text {
+        font-size: 2.5rem;
+    }
+
+    .question {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 22px;
+    }
+
+    .final-message h2 {
+        font-size: 2rem;
+    }
+
+    .final-message p {
+        font-size: 1rem;
+    }
+
+}

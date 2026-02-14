@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    overflow: hidden;
+}
+
+/* Container */
+.timeline-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    animation: twinkle 4s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 40px;
+    color: #ffb6c1;
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+    z-index: 2;
+    text-align: center;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 80%;
+    height: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 0.8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Text */
+.text {
+    width: 45%;
+}
+
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff9ac4;
+}
+
+.text p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Image */
+.image {
+    width: 45%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+}
+
+/* Dots */
+.controls {
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #888;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #ff4d88;
+}
+
+/* Button */
+button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d88;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+button:hover {
+    background: #ff1a66;
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .timeline-container {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .slider {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .slide {
+        flex-direction: column;
+        position: relative;
+        height: auto;
+        text-align: center;
+        transform: none;
+        opacity: 0;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .text,
+    .image {
+        width: 100%;
+    }
+
+    .text h2 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .image img {
+        margin-top: 20px;
+        max-width: 90%;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 10px 22px;
+    }
+
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ✅ Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The First Time ❤️</title>
+
+    <link rel="stylesheet" href="story.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="timeline-container">
+
+    <div class="stars"></div>
+
+    <h1>The First Time ✨</h1>
+
+    <div class="slider">
+
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="text">
+                <h2>When We First Met</h2>
+                <p>
+                    It was just another ordinary day in college.
+                    But somehow, when I saw you…
+                    something felt different.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/first.jpg" alt="First Memory">
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="text">
+                <h2>Our First Conversation</h2>
+                <p>
+                    I was nervous… maybe pretending to be confident.
+                    But that first conversation?
+                    I replayed it in my head all night.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/chat1.jpeg" alt="First Chat">
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="text">
+                <h2>Our First Laugh</h2>
+                <p>
+                    That laugh.
+                    That exact moment.
+                    That’s when I knew I wanted more moments like this.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/laugh.png" alt="First Laugh">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="controls">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+
+    <button id="next-btn">Continue ❤️</button>
+
+</div>
+
+<script src="story.js"></script>
+</body>
+</html>
